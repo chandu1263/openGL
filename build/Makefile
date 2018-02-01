@@ -258,6 +258,33 @@ src/input.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/input.cpp.s
 .PHONY : src/input.cpp.s
 
+src/magent.o: src/magent.cpp.o
+
+.PHONY : src/magent.o
+
+# target to build an object file
+src/magent.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/magent.cpp.o
+.PHONY : src/magent.cpp.o
+
+src/magent.i: src/magent.cpp.i
+
+.PHONY : src/magent.i
+
+# target to preprocess a source file
+src/magent.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/magent.cpp.i
+.PHONY : src/magent.cpp.i
+
+src/magent.s: src/magent.cpp.s
+
+.PHONY : src/magent.s
+
+# target to generate assembly for a file
+src/magent.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/magent.cpp.s
+.PHONY : src/magent.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -444,6 +471,9 @@ help:
 	@echo "... src/input.o"
 	@echo "... src/input.i"
 	@echo "... src/input.s"
+	@echo "... src/magent.o"
+	@echo "... src/magent.i"
+	@echo "... src/magent.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

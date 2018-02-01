@@ -5,6 +5,7 @@
 #include "ground.h"
 #include "pacs.h"
 #include "flying.h"
+#include "magnet.h"
 
 using namespace std;
 
@@ -21,6 +22,7 @@ Trampoline trampolinemax;
 Ground layer1,layer2,layer3,layer4,layer5;
 Pacs pacs[32];
 Flying flying;
+Magnet magnet;
 int flag;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
@@ -88,6 +90,7 @@ void draw() {
     layer4.draw(VP);
     layer5.draw(VP);
     flying.draw(VP);
+    magnet.draw(VP);
     for(int c=0; c<32 ; c++)
     {
       int var=0;
@@ -185,6 +188,10 @@ void tick_input(GLFWwindow *window) {
         pacs[ll].position.x=-5.0;
       }
     }
+    if(magnet.presence)
+    {
+      ball.speed=0.004;
+    }
 }
 
 void tick_elements() {
@@ -269,7 +276,9 @@ void initGL(GLFWwindow *window, int width, int height) {
     trampolinemax.radius = 0.75 ;
     ball       = Ball(-2, -1.25, COLOR_RED);
     ball.speed = 0;
-   ball.speedy = 0;
+    ball.speedy = 0;
+    magnet=Magnet(3,3,COLOR_BLACK);
+    magnet.presence=1;
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
     // Get a handle for our "MVP" uniform

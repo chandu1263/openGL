@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/graphics_asgn1.dir/src/magent.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/color.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/trampoline.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o"

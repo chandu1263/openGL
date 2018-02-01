@@ -62,6 +62,16 @@ glm/gtc/matrix_transform.hpp
 main.h
 /home/chandu/Desktop/graphics/openGL/src/main.h
 
+/home/chandu/Desktop/graphics/openGL/src/magent.cpp
+magnet.h
+/home/chandu/Desktop/graphics/openGL/src/magnet.h
+main.h
+/home/chandu/Desktop/graphics/openGL/src/main.h
+
+/home/chandu/Desktop/graphics/openGL/src/magnet.h
+main.h
+/home/chandu/Desktop/graphics/openGL/src/main.h
+
 /home/chandu/Desktop/graphics/openGL/src/main.cpp
 main.h
 /home/chandu/Desktop/graphics/openGL/src/main.h
@@ -77,6 +87,8 @@ pacs.h
 /home/chandu/Desktop/graphics/openGL/src/pacs.h
 flying.h
 /home/chandu/Desktop/graphics/openGL/src/flying.h
+magnet.h
+/home/chandu/Desktop/graphics/openGL/src/magnet.h
 
 /home/chandu/Desktop/graphics/openGL/src/main.h
 iostream

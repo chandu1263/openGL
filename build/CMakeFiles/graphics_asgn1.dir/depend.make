@@ -19,9 +19,14 @@ CMakeFiles/graphics_asgn1.dir/src/ground.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: ../src/input.cpp
 CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn1.dir/src/magent.cpp.o: ../src/magent.cpp
+CMakeFiles/graphics_asgn1.dir/src/magent.cpp.o: ../src/magnet.h
+CMakeFiles/graphics_asgn1.dir/src/magent.cpp.o: ../src/main.h
+
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/ball.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/flying.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/ground.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/magnet.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/pacs.h

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/chandu/Desktop/graphics/openGL/src/flying.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/flying.cpp.o"
   "/home/chandu/Desktop/graphics/openGL/src/ground.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/ground.cpp.o"
   "/home/chandu/Desktop/graphics/openGL/src/input.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/input.cpp.o"
+  "/home/chandu/Desktop/graphics/openGL/src/magent.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/magent.cpp.o"
   "/home/chandu/Desktop/graphics/openGL/src/main.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/main.cpp.o"
   "/home/chandu/Desktop/graphics/openGL/src/nonedit.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o"
   "/home/chandu/Desktop/graphics/openGL/src/other_handlers.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o"
