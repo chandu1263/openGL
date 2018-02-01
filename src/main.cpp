@@ -18,7 +18,7 @@ GLFWwindow *window;
 Ball ball;
 Trampoline trampolinemax;
 Ground layer1,layer2,layer3,layer4,layer5;
-Pacs pacs[16];
+Pacs pacs[32];
 int flag;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
@@ -77,10 +77,10 @@ void draw() {
     layer3.draw(VP);
     layer4.draw(VP);
     layer5.draw(VP);
-    for(int c=0; c<16 ; c++)
+    for(int c=0; c<32 ; c++)
     {
       int var=0;
-      if(c<8)
+      if(c<16)
       {
         var=1;
       }
@@ -95,15 +95,14 @@ void tick_input(GLFWwindow *window) {
     int right = glfwGetKey(window, GLFW_KEY_RIGHT);
     int up = glfwGetKey(window, GLFW_KEY_UP);
     //collision between pacs and ball
-    for(int i=0;i<16;i++)
+    for(int i=0;i<32;i++)
     {
-      if(pacs[i].pacflag )
+      if(pacs[i].pacflag)
       {
           if(detect_collision(pacs[i].bounding_box(),ball.bounding_box()  ))
           {
             pacs[i].pacflag = 0;
             ball.position.y += 0.4;
-
           }
       }
     }
@@ -142,7 +141,8 @@ void tick_input(GLFWwindow *window) {
         }
     }
     //circulating the balls
-    for(int ll=0;ll<16;ll++)
+
+    for(int ll=0;ll<32;ll++)
     {
       if(pacs[ll].position.x>4 && pacs[ll].pacflag)
       {
@@ -166,7 +166,7 @@ void tick_elements() {
         //ball.position += glm::vec3(0,ball.speedy*t + 0.5*0.25*t*t,0);
         //ball.speedy -= 0.25*t;
 
-        for(int c=0;c<16;c++)
+        for(int c=0;c<32;c++)
         {
           if(pacs[c].pacflag==1)
           {
@@ -185,21 +185,21 @@ void initGL(GLFWwindow *window, int width, int height) {
     /* Objects should be created before any other gl function and shaders */
     // Create the models
     flag=1;
-    for(int r=0;r<16;r++)
+    for(int r=0;r<32;r++)
     {
-      v[r]=float(rand()%50+50)/330;
+      v[r]=float(rand()%50+50)/660;
     }
-    for(int r=0;r<16;r++)
+    for(int r=0;r<32;r++)
     {
       V[r]=flag*v[r];
     }
-    for(int c=0;c<16;c++)
+    for(int c=0;c<32;c++)
     {
       color_t paccolours[5]={COLOR_PAC1,COLOR_PAC2,COLOR_PAC3,COLOR_PAC4,COLOR_PAC5};
 
       int getter = rand()%5;
       int var=0;
-      if(c<8)
+      if(c<16)
         var=1;
       pacs[c]=Pacs(-4.2,float(rand()%40)/10-0.25,paccolours[getter],v[c],double(((rand()%8)+0.75)/100),var);
     }
