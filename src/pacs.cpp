@@ -5,6 +5,7 @@ Pacs::Pacs(float x, float y, color_t color,float r,double speed,int a) {
     this->position = glm::vec3(x, y, 0);
     this->rotation = 0;
     this->appear=1;
+    this->pacflag=1;
     this->speed=speed;
     this->r=r;
     GLfloat vertex_buffer_data[360*9];

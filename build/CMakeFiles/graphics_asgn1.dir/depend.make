@@ -8,6 +8,10 @@ CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/color.cpp.o: ../src/color.cpp
 CMakeFiles/graphics_asgn1.dir/src/color.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn1.dir/src/flying.cpp.o: ../src/flying.cpp
+CMakeFiles/graphics_asgn1.dir/src/flying.cpp.o: ../src/flying.h
+CMakeFiles/graphics_asgn1.dir/src/flying.cpp.o: ../src/main.h
+
 CMakeFiles/graphics_asgn1.dir/src/ground.cpp.o: ../src/ground.cpp
 CMakeFiles/graphics_asgn1.dir/src/ground.cpp.o: ../src/ground.h
 CMakeFiles/graphics_asgn1.dir/src/ground.cpp.o: ../src/main.h
@@ -16,6 +20,7 @@ CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: ../src/input.cpp
 CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: ../src/main.h
 
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/ball.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/flying.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/ground.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.h

@@ -20,6 +20,16 @@ main.h
 main.h
 /home/chandu/Desktop/graphics/openGL/src/main.h
 
+/home/chandu/Desktop/graphics/openGL/src/flying.cpp
+main.h
+/home/chandu/Desktop/graphics/openGL/src/main.h
+flying.h
+/home/chandu/Desktop/graphics/openGL/src/flying.h
+
+/home/chandu/Desktop/graphics/openGL/src/flying.h
+main.h
+/home/chandu/Desktop/graphics/openGL/src/main.h
+
 /home/chandu/Desktop/graphics/openGL/src/ground.cpp
 ground.h
 /home/chandu/Desktop/graphics/openGL/src/ground.h
@@ -65,6 +75,8 @@ ground.h
 /home/chandu/Desktop/graphics/openGL/src/ground.h
 pacs.h
 /home/chandu/Desktop/graphics/openGL/src/pacs.h
+flying.h
+/home/chandu/Desktop/graphics/openGL/src/flying.h
 
 /home/chandu/Desktop/graphics/openGL/src/main.h
 iostream

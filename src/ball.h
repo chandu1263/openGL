@@ -16,7 +16,9 @@ public:
     void tick();
     double speed;
     double speedy;
+    int collide;
     int goingup;
+    int random;
     int tramp;
     int t;
     bounding_box_t bounding_box();

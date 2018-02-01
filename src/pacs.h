@@ -14,7 +14,7 @@ public:
     void set_position(float x, float y);
     double speed;
     double speedy;
-    int pacflag = 1;
+    int pacflag;
     float r;
     int a;
     int slope;

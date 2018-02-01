@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/chandu/Desktop/graphics/openGL/src/ball.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o"
   "/home/chandu/Desktop/graphics/openGL/src/color.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/color.cpp.o"
+  "/home/chandu/Desktop/graphics/openGL/src/flying.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/flying.cpp.o"
   "/home/chandu/Desktop/graphics/openGL/src/ground.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/ground.cpp.o"
   "/home/chandu/Desktop/graphics/openGL/src/input.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/input.cpp.o"
   "/home/chandu/Desktop/graphics/openGL/src/main.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/main.cpp.o"

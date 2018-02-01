@@ -91,6 +91,7 @@ extern const color_t COLOR_LBLUE;
 extern const color_t COLOR_ORANGE;
 extern const color_t COLOR_SOIL;
 extern const color_t COLOR_GRASS;
+extern const color_t COLOR_FLYING;
 extern const color_t COLOR_PAC1;
 extern const color_t COLOR_PAC2;
 extern const color_t COLOR_PAC3;

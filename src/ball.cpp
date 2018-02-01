@@ -57,7 +57,7 @@ Ball::Ball(float x, float y, color_t color) {
           }
           if(j==5)
           {
-            this->object[j] = create3DObject(GL_TRIANGLES, 150, vertex_buffer_data, COLOR_GREY, GL_FILL);
+            this->object[j] = create3DObject(GL_TRIANGLES, 150, vertex_buffer_data, COLOR_SOIL, GL_FILL);
           }
     }
     /*    -0.2, -0.2 , 0, // vertex 1
@@ -101,7 +101,18 @@ void Ball::tick() {
       this->speedy -= 10 * 1/60.0 ;
       this->position.y += (speedy*1/60.0) - ( 30 * 1/60.0 * 1/60.0);
     }
+    if(this->collide == 1)
+    {
+      this->speedy -= 10 * 1/60.0 ;
+      this->position.y += (speedy*1/60.0) - ( 30 * 1/60.0 * 1/60.0);
+    }
     this->position.x -= speed;
+    if(this->random == 1)
+    {
+      this->speedy -= 10 * 1/60.0 ;
+      this->position.y += (speedy*1/60.0) - ( 30 * 1/60.0 * 1/60.0);
+      this->position.x +=speed;
+    }
 
     //this->position.y -= speed;
 }

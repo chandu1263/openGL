@@ -4,6 +4,7 @@
 #include "trampoline.h"
 #include "ground.h"
 #include "pacs.h"
+#include "flying.h"
 
 using namespace std;
 
@@ -19,17 +20,26 @@ Ball ball;
 Trampoline trampolinemax;
 Ground layer1,layer2,layer3,layer4,layer5;
 Pacs pacs[32];
+Flying flying;
 int flag;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 
 Timer t60(1.0 / 60);
-float v[16],V[16];
+float v[32],V[32];
 /* Render the scene with openGL */
 /* Edit this function according to your assignment */
+bool detect_collision_flyingup(bounding_box_t flying, bounding_box_t ball)
+{
+  return ((abs(flying.x-ball.x)<=1.05)&&(abs(flying.y-ball.y)<=0.3)&&(ball.y>flying.y));
+}
+bool detect_collision_flyingdown(bounding_box_t flying, bounding_box_t ball)
+{
+  return ((abs(flying.x-ball.x)<=1.05)&&(abs(flying.y-ball.y)<=0.3)&&(ball.y<flying.y));
+}
 bool detect_up_collision(bounding_box_t trampoline, bounding_box_t ball)
 {
-  return ((abs(trampoline.y - ball.y) < 0.25 ) && (abs(trampoline.x - ball.x) < 0.5));
+  return ((abs(trampoline.y - ball.y) < 0.25 ) && (abs(trampoline.x - ball.x) < 1.0));
 }
 bool detect_side_collision(bounding_box_t trampoline, bounding_box_t ball)
 {
@@ -66,17 +76,18 @@ void draw() {
 
     // Send our transformation to the currently bound shader, in the "MVP" uniform
     // For each model you render, since the MVP will be different (at least the M part)
-    // Don't change unless you are sure!!
     glm::mat4 MVP;  // MVP = Projection * View * Model
+    // Don't change unless you are sure!!
 
     // Scene render
-    trampolinemax.draw(VP);
+
     ball.draw(VP);
     layer1.draw(VP);
     layer2.draw(VP);
     layer3.draw(VP);
     layer4.draw(VP);
     layer5.draw(VP);
+    flying.draw(VP);
     for(int c=0; c<32 ; c++)
     {
       int var=0;
@@ -88,6 +99,7 @@ void draw() {
       pacs[c].draw(VP,var);
     }
     }
+    trampolinemax.draw(VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -101,11 +113,35 @@ void tick_input(GLFWwindow *window) {
       {
           if(detect_collision(pacs[i].bounding_box(),ball.bounding_box()  ))
           {
-            pacs[i].pacflag = 0;
-            ball.position.y += 0.4;
+            if(pacs[i].a != 1 || pacs[i].a == 1)
+            {
+                pacs[i].pacflag = 0;
+                ball.speedy = 6;
+                ball.collide=1;
+            }
+          /*  else if(pacs[i].a == 1)
+            {
+              pacs[i].pacflag = 0;
+              ball.speedy = rand()/10 + (-5);
+              ball.speed = rand()/4 +(-2);
+              ball.random = 1;
+            }*/
           }
       }
     }
+    if(detect_collision_flyingup(flying.bounding_box(),ball.bounding_box()))
+    {
+      ball.speedy=3;
+      ball.speed=0;
+      ball.goingup=1;
+    }
+    if(detect_collision_flyingdown(flying.bounding_box(),ball.bounding_box()))
+    {
+      ball.speedy=0;
+      ball.speed=0;
+      ball.goingup=1;
+    }
+
   //collision between trampoline and ball
    if (detect_up_collision(trampolinemax.bounding_box(), ball.bounding_box()))
     {
@@ -153,19 +189,38 @@ void tick_input(GLFWwindow *window) {
 
 void tick_elements() {
     ball.tick();
-        if(ball.position.y <= -1.25 && ball.goingup == 1)
+        if(ball.position.y <= -1.2 && ball.goingup == 1)
         {
           ball.speedy=0;
           ball.goingup=0;
         }
-        if(ball.position.y <= -1.25 && ball.tramp == 1 && (abs(ball.position.x-trampolinemax.position.x) > 1.1))
+        if(ball.position.y <= -1.2 && ball.tramp == 1 && (abs(ball.position.x-trampolinemax.position.x) > 1.1))
         {
           ball.speedy=0;
           ball.tramp=0;
         }
+        if(ball.position.y <= -1.2 && ball.collide == 1 && (abs(ball.position.x-trampolinemax.position.x) > 1.1))
+        {
+          ball.speedy=0;
+          ball.collide=0;
+        }
+        if((ball.position.x >= 4.0 || ball.position.x <= -4.0) && ball.random == 1 && (abs(ball.position.x-trampolinemax.position.x) > 1.1))
+        {
+          ball.speed=0;
+        }
+        if(ball.position.y <= -1.2 && ball.random == 1 && (abs(ball.position.x-trampolinemax.position.x) > 1.1))
+        {
+          ball.speedy=0;
+          ball.speed=0;
+          ball.random=0;
+        }
         //ball.position += glm::vec3(0,ball.speedy*t + 0.5*0.25*t*t,0);
         //ball.speedy -= 0.25*t;
-
+        flying.tick();
+        if(flying.position.x >= 5.0)
+        {
+          flying.position.x=-5.0;
+        }
         for(int c=0;c<32;c++)
         {
           if(pacs[c].pacflag==1)
@@ -207,7 +262,9 @@ void initGL(GLFWwindow *window, int width, int height) {
     layer2 = Ground(0 , -3.25 , COLOR_BROWN);
     layer3 = Ground(0 , -2.75 , COLOR_BROWN);
     layer4 = Ground(0 , -2.25 , COLOR_BROWN);
-    layer5 = Ground(0 , -1.75 , COLOR_GREEN);
+    layer5 = Ground(0 , -1.75 , COLOR_GRASS);
+    flying = Flying(-5,2.25, COLOR_FLYING);
+    flying.speed = 0.0356988 ;
     trampolinemax = Trampoline(2, -0.5 , COLOR_RED);
     trampolinemax.radius = 0.75 ;
     ball       = Ball(-2, -1.25, COLOR_RED);
@@ -260,7 +317,7 @@ int main(int argc, char **argv) {
             tick_input(window);
         }
 
-        // Poll for Keyboard and mouse events
+        // Poll for Keyflying and mouse events
         glfwPollEvents();
     }
 

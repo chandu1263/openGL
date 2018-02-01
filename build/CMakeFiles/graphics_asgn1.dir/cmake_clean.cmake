@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn1.dir/src/input.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/pacs.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o"
+  "CMakeFiles/graphics_asgn1.dir/src/flying.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/ground.cpp.o"
   "graphics_asgn1.pdb"
   "graphics_asgn1"

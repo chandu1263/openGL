@@ -177,6 +177,33 @@ src/color.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/color.cpp.s
 .PHONY : src/color.cpp.s
 
+src/flying.o: src/flying.cpp.o
+
+.PHONY : src/flying.o
+
+# target to build an object file
+src/flying.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/flying.cpp.o
+.PHONY : src/flying.cpp.o
+
+src/flying.i: src/flying.cpp.i
+
+.PHONY : src/flying.i
+
+# target to preprocess a source file
+src/flying.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/flying.cpp.i
+.PHONY : src/flying.cpp.i
+
+src/flying.s: src/flying.cpp.s
+
+.PHONY : src/flying.s
+
+# target to generate assembly for a file
+src/flying.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/flying.cpp.s
+.PHONY : src/flying.cpp.s
+
 src/ground.o: src/ground.cpp.o
 
 .PHONY : src/ground.o
@@ -408,6 +435,9 @@ help:
 	@echo "... src/color.o"
 	@echo "... src/color.i"
 	@echo "... src/color.s"
+	@echo "... src/flying.o"
+	@echo "... src/flying.i"
+	@echo "... src/flying.s"
 	@echo "... src/ground.o"
 	@echo "... src/ground.i"
 	@echo "... src/ground.s"
