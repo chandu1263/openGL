@@ -30,6 +30,8 @@ CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/magnet.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/pacs.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/pond.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/spikes.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/timer.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/trampoline.h
 
@@ -42,6 +44,14 @@ CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o: ../src/other_handlers.cp
 CMakeFiles/graphics_asgn1.dir/src/pacs.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/pacs.cpp.o: ../src/pacs.cpp
 CMakeFiles/graphics_asgn1.dir/src/pacs.cpp.o: ../src/pacs.h
+
+CMakeFiles/graphics_asgn1.dir/src/pond.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn1.dir/src/pond.cpp.o: ../src/pond.cpp
+CMakeFiles/graphics_asgn1.dir/src/pond.cpp.o: ../src/pond.h
+
+CMakeFiles/graphics_asgn1.dir/src/spikes.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn1.dir/src/spikes.cpp.o: ../src/spikes.cpp
+CMakeFiles/graphics_asgn1.dir/src/spikes.cpp.o: ../src/spikes.h
 
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o: ../src/timer.cpp
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o: ../src/timer.h

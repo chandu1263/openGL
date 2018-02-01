@@ -14,6 +14,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/chandu/Desktop/graphics/openGL/src/nonedit.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o"
   "/home/chandu/Desktop/graphics/openGL/src/other_handlers.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o"
   "/home/chandu/Desktop/graphics/openGL/src/pacs.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/pacs.cpp.o"
+  "/home/chandu/Desktop/graphics/openGL/src/pond.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/pond.cpp.o"
+  "/home/chandu/Desktop/graphics/openGL/src/spikes.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/spikes.cpp.o"
   "/home/chandu/Desktop/graphics/openGL/src/timer.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o"
   "/home/chandu/Desktop/graphics/openGL/src/trampoline.cpp" "/home/chandu/Desktop/graphics/openGL/build/CMakeFiles/graphics_asgn1.dir/src/trampoline.cpp.o"
   )

@@ -14,6 +14,7 @@ const color_t COLOR_ORANGE = { 255, 128, 0 };
 const color_t COLOR_SOIL = { 102, 52, 0 };
 const color_t COLOR_GRASS = { 38,206,13};
 const color_t COLOR_FLYING ={ 220,187,17};
+const color_t COLOR_WATER ={99,181,204};
 const color_t COLOR_PAC1 = {45, 45, 181};
 const color_t COLOR_PAC2 = {186, 35, 60};
 const color_t COLOR_PAC3 = {235, 219, 42};

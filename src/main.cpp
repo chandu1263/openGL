@@ -6,6 +6,8 @@
 #include "pacs.h"
 #include "flying.h"
 #include "magnet.h"
+#include "pond.h"
+#include "spikes.h"
 
 using namespace std;
 
@@ -23,6 +25,8 @@ Ground layer1,layer2,layer3,layer4,layer5;
 Pacs pacs[32];
 Flying flying;
 Magnet magnet;
+Pond pond;
+Spikes spikes;
 int flag;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
@@ -83,13 +87,13 @@ void draw() {
 
     // Scene render
 
-    ball.draw(VP);
+
     layer1.draw(VP);
     layer2.draw(VP);
     layer3.draw(VP);
     layer4.draw(VP);
     layer5.draw(VP);
-    flying.draw(VP);
+    pond.draw(VP);
     magnet.draw(VP);
     for(int c=0; c<32 ; c++)
     {
@@ -98,11 +102,15 @@ void draw() {
       {
         var=1;
       }
-      if(pacs[c].pacflag == 1){
-      pacs[c].draw(VP,var);
+      if(pacs[c].pacflag == 1)
+      {
+        pacs[c].draw(VP,var);
+      }
     }
-    }
+    spikes.draw(VP);
+    flying.draw(VP);
     trampolinemax.draw(VP);
+    ball.draw(VP);
 }
 
 void tick_input(GLFWwindow *window) {
@@ -144,6 +152,12 @@ void tick_input(GLFWwindow *window) {
       ball.speed=0;
       ball.goingup=1;
     }
+    if(abs(ball.position.x)<=0.75 && (ball.position.y <= -1.2))
+    {
+      ball.position.x=0;
+      ball.position.y=-2.2;
+      ball.inwater=1;
+    }
 
   //collision between trampoline and ball
    if (detect_up_collision(trampolinemax.bounding_box(), ball.bounding_box()))
@@ -162,17 +176,29 @@ void tick_input(GLFWwindow *window) {
     }
     else
     {
+      if (up && ball.goingup != 1 )
+      {
+        //printf("k11");
+        if(ball.inwater != 1)
+        {
+          ball.speedy = 6.5;
+          ball.goingup=1;
+        }
+        else if(ball.inwater == 1)
+        {
+        //  printf("kk");
+          ball.speedy = 8.5;
+          ball.goingup=1;
+        }
+      }
         //left key
         if (left)
         {
           ball.position +=glm::vec3(-.03,0,0);
         }
         //up key
-        if (up && ball.goingup != 1)
-        {
-          ball.speedy = 6.5;
-          ball.goingup=1;
-        }
+
+
         //right key
         if(right)
         {
@@ -221,6 +247,7 @@ void tick_elements() {
           ball.speed=0;
           ball.random=0;
         }
+        spikes.tick();
         //ball.position += glm::vec3(0,ball.speedy*t + 0.5*0.25*t*t,0);
         //ball.speedy -= 0.25*t;
         flying.tick();
@@ -272,11 +299,14 @@ void initGL(GLFWwindow *window, int width, int height) {
     layer5 = Ground(0 , -1.75 , COLOR_GRASS);
     flying = Flying(-5,2.25, COLOR_FLYING);
     flying.speed = 0.0356988 ;
-    trampolinemax = Trampoline(2, -0.5 , COLOR_RED);
+    trampolinemax = Trampoline(2.5, -0.5 , COLOR_RED);
     trampolinemax.radius = 0.75 ;
+    spikes = Spikes(-3.5, -1.5, COLOR_LRED);
     ball       = Ball(-2, -1.25, COLOR_RED);
     ball.speed = 0;
+    ball.inwater=0;
     ball.speedy = 0;
+    pond = Pond(0,-1.5,COLOR_WATER,1.0);
     magnet=Magnet(3,3,COLOR_BLACK);
     magnet.presence=1;
     // Create and compile our GLSL program from the shaders

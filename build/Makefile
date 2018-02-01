@@ -393,6 +393,60 @@ src/pacs.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/pacs.cpp.s
 .PHONY : src/pacs.cpp.s
 
+src/pond.o: src/pond.cpp.o
+
+.PHONY : src/pond.o
+
+# target to build an object file
+src/pond.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/pond.cpp.o
+.PHONY : src/pond.cpp.o
+
+src/pond.i: src/pond.cpp.i
+
+.PHONY : src/pond.i
+
+# target to preprocess a source file
+src/pond.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/pond.cpp.i
+.PHONY : src/pond.cpp.i
+
+src/pond.s: src/pond.cpp.s
+
+.PHONY : src/pond.s
+
+# target to generate assembly for a file
+src/pond.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/pond.cpp.s
+.PHONY : src/pond.cpp.s
+
+src/spikes.o: src/spikes.cpp.o
+
+.PHONY : src/spikes.o
+
+# target to build an object file
+src/spikes.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/spikes.cpp.o
+.PHONY : src/spikes.cpp.o
+
+src/spikes.i: src/spikes.cpp.i
+
+.PHONY : src/spikes.i
+
+# target to preprocess a source file
+src/spikes.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/spikes.cpp.i
+.PHONY : src/spikes.cpp.i
+
+src/spikes.s: src/spikes.cpp.s
+
+.PHONY : src/spikes.s
+
+# target to generate assembly for a file
+src/spikes.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/spikes.cpp.s
+.PHONY : src/spikes.cpp.s
+
 src/timer.o: src/timer.cpp.o
 
 .PHONY : src/timer.o
@@ -486,6 +540,12 @@ help:
 	@echo "... src/pacs.o"
 	@echo "... src/pacs.i"
 	@echo "... src/pacs.s"
+	@echo "... src/pond.o"
+	@echo "... src/pond.i"
+	@echo "... src/pond.s"
+	@echo "... src/spikes.o"
+	@echo "... src/spikes.i"
+	@echo "... src/spikes.s"
 	@echo "... src/timer.o"
 	@echo "... src/timer.i"
 	@echo "... src/timer.s"

@@ -20,6 +20,7 @@ public:
     int goingup;
     int random;
     int tramp;
+    int inwater;
     int t;
     bounding_box_t bounding_box();
 private:

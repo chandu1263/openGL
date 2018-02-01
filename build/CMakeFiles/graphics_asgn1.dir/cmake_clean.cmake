@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn1.dir/src/color.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/trampoline.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o"
+  "CMakeFiles/graphics_asgn1.dir/src/spikes.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/main.cpp.o"
@@ -11,6 +12,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/flying.cpp.o"
   "CMakeFiles/graphics_asgn1.dir/src/ground.cpp.o"
+  "CMakeFiles/graphics_asgn1.dir/src/pond.cpp.o"
   "graphics_asgn1.pdb"
   "graphics_asgn1"
 )
