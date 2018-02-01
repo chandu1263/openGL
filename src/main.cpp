@@ -29,8 +29,17 @@ float v[16],V[16];
 /* Edit this function according to your assignment */
 bool detect_up_collision(bounding_box_t trampoline, bounding_box_t ball)
 {
-  return (abs(trampoline.y - ball.y) < 0.25 ) && (abs(trampoline.x - ball.x < 0.5));
+  return ((abs(trampoline.y - ball.y) < 0.25 ) && (abs(trampoline.x - ball.x) < 0.5));
 }
+bool detect_side_collision(bounding_box_t trampoline, bounding_box_t ball)
+{
+  return ((abs(trampoline.x-ball.x )<= 1.10) && (abs(ball.y -layer5.position.y)< 1.00) && (ball.x-trampoline.x<0));
+}
+bool detect_right_collision(bounding_box_t trampoline, bounding_box_t ball)
+{
+  return ((abs(ball.x-trampoline.x) <= 1.10)&&(ball.y - layer5.position.y < 1.00)&&(ball.x-trampoline.x>0));
+}
+
 void draw() {
     // clear the color and depth in the frame buffer
     glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -85,6 +94,7 @@ void tick_input(GLFWwindow *window) {
     int left  = glfwGetKey(window, GLFW_KEY_LEFT);
     int right = glfwGetKey(window, GLFW_KEY_RIGHT);
     int up = glfwGetKey(window, GLFW_KEY_UP);
+    //collision between pacs and ball
     for(int i=0;i<16;i++)
     {
       if(pacs[i].pacflag )
@@ -97,34 +107,46 @@ void tick_input(GLFWwindow *window) {
           }
       }
     }
-
+  //collision between trampoline and ball
    if (detect_up_collision(trampolinemax.bounding_box(), ball.bounding_box()))
     {
-      printf("tramp\n");
+      //printf("tramp\n");
         ball.speedy = 10;
         ball.tramp=1;
     }
+    else if(detect_side_collision(trampolinemax.bounding_box(),ball.bounding_box()))
+    {
+      ball.position.x -= 0.1;
+    }
+    else if(detect_right_collision(trampolinemax.bounding_box(),ball.bounding_box()))
+    {
+      ball.position.x += 0.1;
+    }
     else
     {
-
-        if (left) {
+        //left key
+        if (left)
+        {
           ball.position +=glm::vec3(-.03,0,0);
         }
-        if (up && ball.goingup != 1) {
-
+        //up key
+        if (up && ball.goingup != 1)
+        {
           ball.speedy = 6.5;
           ball.goingup=1;
         }
+        //right key
         if(right)
         {
           ball.position +=glm::vec3(.03,0,0);
         }
     }
+    //circulating the balls
     for(int ll=0;ll<16;ll++)
     {
       if(pacs[ll].position.x>4 && pacs[ll].pacflag)
       {
-        pacs[ll].position.x=-4.8;
+        pacs[ll].position.x=-5.0;
       }
     }
 }
@@ -135,6 +157,11 @@ void tick_elements() {
         {
           ball.speedy=0;
           ball.goingup=0;
+        }
+        if(ball.position.y <= -1.25 && ball.tramp == 1 && (abs(ball.position.x-trampolinemax.position.x) > 1.1))
+        {
+          ball.speedy=0;
+          ball.tramp=0;
         }
         //ball.position += glm::vec3(0,ball.speedy*t + 0.5*0.25*t*t,0);
         //ball.speedy -= 0.25*t;
@@ -182,7 +209,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     layer4 = Ground(0 , -2.25 , COLOR_BROWN);
     layer5 = Ground(0 , -1.75 , COLOR_GREEN);
     trampolinemax = Trampoline(2, -0.5 , COLOR_RED);
-    trampolinemax.radius = 0.8 ;
+    trampolinemax.radius = 0.75 ;
     ball       = Ball(-2, -1.25, COLOR_RED);
     ball.speed = 0;
    ball.speedy = 0;
